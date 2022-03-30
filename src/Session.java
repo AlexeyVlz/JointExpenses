@@ -3,15 +3,16 @@ import java.util.List;
 import java.util.UUID;
 
 public class Session {
+    GenerateNewId generateId = new GenerateNewId();
 
     final private String name;
-    final private UUID id;
+    final private String id;
     final private List<Person> persons;
     final private List<Expense> expenses;
 
     public Session(String name) {
         this.name = name;
-        this.id = UUID.randomUUID();
+        this.id = generateId.generateId();
         this.persons = new ArrayList<>();
         this.expenses = new ArrayList<>();
     }
@@ -20,7 +21,7 @@ public class Session {
         return name;
     }
 
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
@@ -31,4 +32,6 @@ public class Session {
     public List<Expense> getExpenses() {
         return expenses;
     }
+
+
 }

@@ -1,20 +1,21 @@
-import java.util.UUID;
+
 
 public class Person {
+    GenerateNewId generateId = new GenerateNewId();
 
     final private String name;
-    final private UUID id;
+    final private String id;
 
     public Person(String name) {
         this.name = name;
-        this.id = UUID.randomUUID();
+        this.id = generateId.generateId();
     }
 
     public String getName() {
         return name;
     }
 
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 }

@@ -4,9 +4,11 @@ import java.util.UUID;
 import java.util.Date;
 
 public class Expense {
+    GenerateNewId generateId = new GenerateNewId();
+
 
     final private String name;
-    final private UUID id;
+    final private String id;
     final private Person from;
     final private List<Person> to;
     final private double amount;
@@ -18,7 +20,7 @@ public class Expense {
         this.to = new ArrayList<>();
         this.amount = amount;
         this.date = new Date();
-        this.id = UUID.randomUUID();
+        this.id = generateId.generateId();
     }
 
     public void addPerson (Person person) {
@@ -29,7 +31,7 @@ public class Expense {
         return name;
     }
 
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
