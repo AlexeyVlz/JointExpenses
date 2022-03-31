@@ -3,18 +3,20 @@ import java.util.List;
 import java.util.UUID;
 
 public class Session {
-    GenerateNewId generateId = new GenerateNewId();
 
     final private String name;
-    final private String id;
+    private String id;
     final private List<Person> persons;
     final private List<Expense> expenses;
 
     public Session(String name) {
         this.name = name;
-        this.id = generateId.generateId();
         this.persons = new ArrayList<>();
         this.expenses = new ArrayList<>();
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

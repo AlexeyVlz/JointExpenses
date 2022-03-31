@@ -4,11 +4,10 @@ import java.util.UUID;
 import java.util.Date;
 
 public class Expense {
-    GenerateNewId generateId = new GenerateNewId();
 
 
     final private String name;
-    final private String id;
+    private String id;
     final private Person from;
     final private List<Person> to;
     final private double amount;
@@ -20,7 +19,10 @@ public class Expense {
         this.to = new ArrayList<>();
         this.amount = amount;
         this.date = new Date();
-        this.id = generateId.generateId();
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void addPerson (Person person) {

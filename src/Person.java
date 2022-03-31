@@ -1,14 +1,16 @@
 
 
 public class Person {
-    GenerateNewId generateId = new GenerateNewId();
 
     final private String name;
-    final private String id;
+    private String id;
 
     public Person(String name) {
         this.name = name;
-        this.id = generateId.generateId();
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
